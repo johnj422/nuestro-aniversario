@@ -1,10 +1,11 @@
-/**
- * Bodas de Seda • Paola & John (12 Años de Matrimonio)
- * Mobile-First Interactive Architecture
- * Crafted with design-taste-frontend + impeccable
- */
+// Force page to always start at top on reload
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
 
 document.addEventListener('DOMContentLoaded', () => {
+  window.scrollTo(0, 0);
   const plans = {
     plan1: {
       title: "Atardecer en Rooftop & Cócteles de Autor",
@@ -409,4 +410,12 @@ document.addEventListener('DOMContentLoaded', () => {
       playGentleTone();
     });
   }
+});
+
+// Extra safety for mobile Safari (BFcache / back-forward cache restoration)
+window.addEventListener('pageshow', (event) => {
+  window.scrollTo(0, 0);
+});
+window.addEventListener('beforeunload', () => {
+  window.scrollTo(0, 0);
 });
