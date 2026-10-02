@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Paola & John • 12 Años de Amor</title>
+  
+  <meta name="theme-color" content="#F9F7F3">
+  
+  <!-- Fonts: Plus Jakarta Sans + Cormorant Garamond + Caveat (for hw-path-text) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="mobile-app-shell">
+
+    <!-- HERO FULL PHOTO IMMERSIVE COVER -->
+    <section class="hero-immersive-cover">
+      <!-- Background Wedding Photo with Ken Burns Animation -->
+      <div class="hero-photo-wrapper">
+        <img 
+          src="assets/boda.jpg" 
+          alt="Boda de Paola y John" 
+          class="hero-wedding-photo"
+        >
+        <div class="hero-gradient-scrim"></div>
+      </div>
+
+      <!-- Floating Header inside Hero -->
+      <header class="hero-floating-nav">
+        <div class="brand-monogram-light">Paola &amp; John &bull; XII</div>
+        <button class="sound-btn-light" id="soundBtn" type="button" aria-label="Nuestra playlist de canciones">
+          <span class="sound-dot"></span>
+          <span id="soundLabel">Playlist</span>
+        </button>
+      </header>
+
+      <!-- Hero Bottom Content Overlay -->
+      <div class="hero-text-overlay">
+        <span class="hero-date-badge">04 de Octubre &bull; Bodas de Seda</span>
+        <h1 class="hero-title-light">
+          Paola &amp; John
+          <span class="hero-subtitle-light">12 Años Juntos</span>
+        </h1>
+        <p class="hero-tagline-light">
+          Donde todo comenzó &bull; 10.04.2014
+        </p>
+        <div class="hero-scroll-hint">
+          <span>Desliza para ver la sorpresa</span>
+          <span>&darr;</span>
+        </div>
+      </div>
+    </section>
+
+    <main class="mobile-content">
+
+      <!-- Personal Love Letter with Handwriting Path Text -->
+      <section class="letter-block">
+        <div class="path-text-wrapper" id="pathTextWrapper" aria-label="Gracias por acompañarme en este viaje...">
+          <svg class="path-text-svg" viewBox="0 0 440 85" preserveAspectRatio="xMinYMid meet">
+            <path id="journeyPath" d="M 12 55 Q 130 18, 260 48 T 425 30" fill="none" class="journey-guide-path"></path>
+            <text class="journey-text">
+              <textPath href="#journeyPath" id="journeyTextPath" startOffset="0%"></textPath>
+            </text>
+          </svg>
+        </div>
+        <p class="letter-text">
+          Mirar esta foto y verte hoy me llena de alegria y emoción. Han pasado doce años desde el día en que unimos nuestras vidas ante Dios, porque ya lo habíamos hecho por amor. Cada amanecer a tu lado me confirma que eres mi persona favorita en el mundo.
+        </p>
+        <p class="letter-text">
+          La seda simboliza este aniversario porque no se quiebra: fluye, abriga y perdura. Para este 4 de octubre, he preparado tres planes con todo mi amor... pero la decisión final es completamente tuya.
+        </p>
+        <div class="letter-signature">
+          Con todo mi amor
+        </div>
+      </section>
+
+      <!-- Apple Music Playlist Collection -->
+      <section class="playlist-block" id="playlist">
+        <div class="playlist-header">
+          <div class="hw-title-wrapper" id="hwTitleWrapper">
+            <svg class="hw-title-svg" viewBox="0 0 320 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path id="hwTitleGuide" d="M 6 36 C 80 34, 180 38, 314 33" stroke="rgba(140, 106, 50, 0.4)" stroke-width="1.5" stroke-dasharray="2 5" stroke-linecap="round"></path>
+              <text class="hw-title-text" x="6" y="28" id="hwTitleText">Nuestra Banda Sonora</text>
+            </svg>
+          </div>
+          <h2 class="playlist-title">Para mi esposa</h2>
+          <p class="playlist-desc">
+            Una colección especial de canciones que preparé para ti en Apple Music, para recordar cada momento de nuestros 12 años juntos. Dale play mientras descubres los planes:
+          </p>
+        </div>
+        <div class="music-embed-container">
+          <iframe 
+            allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" 
+            frameborder="0" 
+            height="450" 
+            style="width:100%;max-width:100%;overflow:hidden;border-radius:12px;" 
+            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" 
+            src="https://embed.music.apple.com/co/playlist/para-mi-esposa/pl.u-xRkkukLaYd2">
+          </iframe>
+        </div>
+      </section>
+
+
+      <!-- Key Milestones (Number Wheel Animated) -->
+      <section class="metrics-grid" id="metricsSection">
+        <div class="metric-card">
+          <div class="metric-num number-wheel" data-target="12">
+            <span class="wheel-fallback">12</span>
+          </div>
+          <div class="metric-lbl">Años Casados</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-num number-wheel" data-target="144">
+            <span class="wheel-fallback">144</span>
+          </div>
+          <div class="metric-lbl">Meses de Amor</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-num number-wheel" data-target="4,383">
+            <span class="wheel-fallback">4,383</span>
+          </div>
+          <div class="metric-lbl">Días Juntos</div>
+        </div>
+      </section>
+
+      <!-- The 3 Anniversary Plans -->
+      <section class="plans-block" id="planes">
+        <div class="section-headline-group">
+          <span class="section-label">Celebración de Aniversario</span>
+          <h2 class="section-title">Escoge nuestro plan</h2>
+        </div>
+
+        <div class="plans-list">
+
+          <!-- Plan 1: Atardecer en Rooftop & Cócteles de Autor -->
+          <article class="mobile-plan-card" data-plan="plan1">
+            <div class="plan-card-img-wrap">
+              <img 
+                src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=800&q=85" 
+                alt="Atardecer en Rooftop y Cócteles" 
+                class="plan-card-img" 
+                loading="lazy"
+              >
+            </div>
+            <div class="plan-card-body">
+              <span class="plan-category">Atardecer &bull; Cócteles</span>
+              <h3 class="plan-name">Atardecer en Rooftop &amp; Cócteles de Autor</h3>
+              <p class="plan-summary">
+                Una tarde vibrante y romántica en una terraza con vista panorámica a la ciudad. Música lounge, mesa reservada para ver la caída del sol, tabla de tapas gourmet y coctelería de autor.
+              </p>
+              <ul class="plan-highlights">
+                <li>Mesa reservada con vista panorámica del atardecer</li>
+                <li>Coctelería de autor personalizada & tapas gourmet</li>
+                <li>Atmósfera musical elegante para brindar por nosotros</li>
+              </ul>
+              <button class="btn-select-pill" type="button">
+                <span>Elegir este atardecer en rooftop</span>
+                <span>&rarr;</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Plan 2: Escapada Mágica en la Naturaleza -->
+          <article class="mobile-plan-card" data-plan="plan2">
+            <div class="plan-card-img-wrap">
+              <img 
+                src="https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=800&q=85" 
+                alt="Escapada en la naturaleza" 
+                class="plan-card-img" 
+                loading="lazy"
+              >
+            </div>
+            <div class="plan-card-body">
+              <span class="plan-category">Escapada &bull; Naturaleza</span>
+              <h3 class="plan-name">Escapada Mágica en la Naturaleza</h3>
+              <p class="plan-summary">
+                Un fin de semana en un glamping boutique o cabaña de diseño rodeada de verde. Fogata nocturna con vino junto al fuego, cobijados bajo las estrellas y despertar sin alarmas.
+              </p>
+              <ul class="plan-highlights">
+                <li>Cabaña contemporánea inmersa en el bosque</li>
+                <li>Fogata privada nocturna y canasta de picnic</li>
+                <li>Desconexión absoluta y amanecer en paz</li>
+              </ul>
+              <button class="btn-select-pill" type="button">
+                <span>Elegir esta escapada mágica</span>
+                <span>&rarr;</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Plan 3: Cena Romántica -->
+          <article class="mobile-plan-card" data-plan="plan3">
+            <div class="plan-card-img-wrap">
+              <img 
+                src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=800&q=85" 
+                alt="Cena a la luz de las velas" 
+                class="plan-card-img" 
+                loading="lazy"
+              >
+            </div>
+            <div class="plan-card-body">
+              <span class="plan-category">Gastronomía &bull; Romántico</span>
+              <h3 class="plan-name">Cena Romántica</h3>
+              <p class="plan-summary">
+                Una velada romántica a la luz de las velas en el restaurante que prefieras. Menú de autor, copas de vino seleccionadas y brindis con champagne para conversar y mirarnos sin prisas.
+              </p>
+              <ul class="plan-highlights">
+                <li>Reserva especial en mesa con vista íntima</li>
+                <li>Menú degustación sorpresa & maridaje</li>
+                <li>Brindis con champagne por nuestras Bodas de Seda</li>
+              </ul>
+              <button class="btn-select-pill" type="button">
+                <span>Elegir esta cena romántica</span>
+                <span>&rarr;</span>
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Mobile Footer -->
+    <footer class="mobile-footer">
+      Para Paola, el amor de mi vida.<br>
+      04 de Octubre &bull; Bodas de Seda
+    </footer>
+
+    <!-- Sticky Bottom Sheet for WhatsApp Confirmation -->
+    <div class="mobile-bottom-dock" id="mobileBottomDock" role="dialog" aria-label="Confirmación de plan">
+      <div class="dock-inner">
+        <div class="dock-header-row">
+          <div>
+            <span class="dock-meta-tag">Has seleccionado:</span>
+            <div class="dock-selected-title" id="dockSelectedTitle">Nombre del plan</div>
+          </div>
+          <button class="btn-dock-close" id="btnCloseDock" type="button">Cambiar</button>
+        </div>
+
+        <a href="#" class="btn-whatsapp-touch" id="dockWhatsAppBtn" target="_blank" rel="noopener">
+          <span>Enviar mi elección a John por WhatsApp</span>
+          <span>&rarr;</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,743 @@
+/*
+ * Editorial Luxury Mobile-First System
+ * Aniversario: Paola & John • Bodas de Seda (12 Años)
+ * Crafted with taste-skill & impeccable
+ */
+
+:root {
+  --bg-primary: #F9F7F3;
+  --bg-card: #FFFFFF;
+  --bg-accent: #F2ECE4;
+  
+  --text-main: #1C1917;
+  --text-muted: #57534E;
+  --text-subtle: #8A847F;
+  
+  --brass: #8C6A32;
+  --brass-soft: #B89352;
+  --brass-light: rgba(140, 106, 50, 0.12);
+  
+  --border-light: rgba(28, 25, 23, 0.09);
+  --border-focus: #1C1917;
+  
+  --shadow-sm: 0 4px 12px rgba(28, 25, 23, 0.04);
+  --shadow-md: 0 12px 28px rgba(28, 25, 23, 0.08);
+  --shadow-dock: 0 -8px 30px rgba(0, 0, 0, 0.12);
+  
+  --radius-xs: 6px;
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 24px;
+  
+  --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100dvh;
+}
+
+/* Mobile App Viewport Container */
+.mobile-app-shell {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100dvh;
+  background-color: var(--bg-primary);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 120px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.04);
+}
+
+/* HERO FULL PHOTO IMMERSIVE COVER */
+.hero-immersive-cover {
+  position: relative;
+  width: 100%;
+  min-height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #12100E;
+}
+
+.hero-photo-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-wedding-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%; /* Centers Paola and John's faces */
+  display: block;
+  transform-origin: 52% 25%;
+  animation: kenBurnsCinematic 18s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes kenBurnsCinematic {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  50% {
+    transform: scale(1.08) translate(-1%, -1.2%);
+  }
+  100% {
+    transform: scale(1.12) translate(1%, -0.8%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-wedding-photo {
+    animation: none;
+  }
+}
+
+.hero-gradient-scrim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(18, 16, 14, 0.45) 0%,
+    rgba(18, 16, 14, 0.1) 35%,
+    rgba(18, 16, 14, 0.55) 65%,
+    rgba(18, 16, 14, 0.95) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Floating Navigation inside Hero */
+.hero-floating-nav {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px;
+}
+
+.brand-monogram-light {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.sound-btn-light {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 7px 16px;
+  border-radius: 30px;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: all 0.2s var(--ease-editorial);
+}
+
+.sound-btn-light:active {
+  transform: scale(0.96);
+}
+
+.sound-btn-light .sound-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #DFC08A;
+  box-shadow: 0 0 6px #DFC08A;
+}
+
+/* Text Overlay inside Hero */
+.hero-text-overlay {
+  position: relative;
+  z-index: 10;
+  padding: 0 22px 30px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hero-date-badge {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #DFC08A;
+  font-weight: 700;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero-title-light {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 2.75rem;
+  line-height: 1.05;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.03em;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+.hero-subtitle-light {
+  display: block;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2.3rem;
+  font-weight: 600;
+  font-style: normal;
+  color: #EAD0A2;
+  letter-spacing: 0.01em;
+  margin-top: 2px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero-tagline-light {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.5;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-scroll-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  animation: floatArrow 2s infinite ease-in-out;
+}
+
+@keyframes floatArrow {
+  0%, 100% { transform: translateY(0); opacity: 0.7; }
+  50% { transform: translateY(4px); opacity: 1; }
+}
+
+/* Content Padding */
+.mobile-content {
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+/* NARRATIVE LETTER / DEDICATION */
+.letter-block {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 8px 4px;
+  box-shadow: none;
+}
+
+/* HW-PATH-TEXT STYLING (Inspired by HyperFrames hw-path-text) */
+.path-text-wrapper {
+  width: 100%;
+  margin-bottom: 14px;
+  overflow: visible;
+}
+
+.path-text-svg {
+  width: 100%;
+  height: auto;
+  min-height: 60px;
+  max-height: 85px;
+  overflow: visible;
+  display: block;
+}
+
+.journey-guide-path {
+  stroke: rgba(140, 106, 50, 0.35);
+  stroke-width: 1.5;
+  stroke-dasharray: 2 6;
+  stroke-linecap: round;
+  fill: none;
+  transition: stroke-dashoffset 1s ease;
+}
+
+.journey-text {
+  font-family: 'Caveat', cursive, sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  fill: var(--text-main);
+  letter-spacing: 0.3px;
+}
+
+.journey-text tspan {
+  opacity: 0;
+  transition: opacity 0.12s ease;
+}
+
+.letter-text {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.letter-signature {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--brass);
+  text-align: right;
+  margin-top: 10px;
+}
+
+/* PLAYLIST SECTION (FREE-FLOATING / NO CARD) */
+.playlist-block {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 8px 4px;
+  box-shadow: none;
+}
+
+/* HW-TITLE HANDWRITING STYLING (Inspired by HyperFrames hw-title) */
+.hw-title-wrapper {
+  width: 100%;
+  max-width: 320px;
+  min-height: 44px;
+  margin-bottom: 6px;
+  overflow: visible;
+  cursor: pointer;
+  display: block;
+}
+
+.hw-title-svg {
+  width: 100%;
+  height: 44px;
+  overflow: visible;
+  display: block;
+}
+
+.hw-title-text {
+  font-family: 'Caveat', cursive, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  fill: var(--brass);
+  letter-spacing: 0.5px;
+}
+
+.hw-title-text tspan {
+  opacity: 0;
+  transition: opacity 0.12s ease;
+}
+
+.playlist-header {
+  margin-bottom: 16px;
+}
+
+.playlist-tag {
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--brass);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.playlist-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+
+.playlist-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.spotify-embed-container,
+.music-embed-container {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: none;
+  background: transparent;
+  position: relative;
+}
+
+.music-embed-container iframe {
+  display: block;
+  width: 100%;
+  border: none;
+}
+
+
+/* METRICS STRIP */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.metric-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 16px 10px;
+  text-align: center;
+}
+
+.metric-num {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.7rem;
+  line-height: 1;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+/* NUMBER-WHEEL STYLING (Inspired by HyperFrames number-wheel) */
+.number-wheel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.75em;
+  line-height: 1.75em;
+  overflow: hidden;
+  vertical-align: middle;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+}
+
+.wheel-column {
+  display: inline-block;
+  height: 1.75em;
+  overflow: hidden;
+  position: relative;
+}
+
+.wheel-track {
+  display: flex;
+  flex-direction: column;
+  transform: translateY(0);
+  transition: transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.wheel-digit {
+  height: 1.75em;
+  line-height: 1.75em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-variant-numeric: tabular-nums;
+  font-family: inherit;
+  font-weight: 800;
+}
+
+.wheel-comma {
+  height: 1.75em;
+  line-height: 1.75em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-weight: 800;
+  padding: 0 1px;
+}
+
+.wheel-fallback {
+  display: inline-block;
+}
+
+.metric-lbl {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  font-weight: 700;
+}
+
+/* PLANS SECTION */
+.section-headline-group {
+  margin-bottom: 18px;
+}
+
+.section-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--brass);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.section-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
+.plans-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* PLAN CARD */
+.mobile-plan-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: transform 0.25s var(--ease-editorial), border-color 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+}
+
+.mobile-plan-card:active {
+  transform: scale(0.985);
+}
+
+.mobile-plan-card.selected {
+  border-color: var(--text-main);
+  box-shadow: 0 0 0 2px var(--text-main), var(--shadow-md);
+}
+
+.plan-card-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #EAE5DE;
+  overflow: hidden;
+}
+
+.plan-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.plan-card-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 4px 10px;
+  border-radius: var(--radius-xs);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.plan-card-body {
+  padding: 18px 18px 20px 18px;
+}
+
+.plan-category {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brass);
+  font-weight: 700;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.plan-name {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+
+.plan-summary {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.plan-highlights {
+  list-style: none;
+  border-top: 1px solid var(--border-light);
+  padding-top: 12px;
+  margin-bottom: 18px;
+}
+
+.plan-highlights li {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  position: relative;
+  padding-left: 14px;
+}
+
+.plan-highlights li::before {
+  content: '•';
+  color: var(--brass);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.btn-select-pill {
+  width: 100%;
+  background: #F9F7F3;
+  border: 1px solid var(--border-light);
+  padding: 13px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-main);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.mobile-plan-card.selected .btn-select-pill {
+  background: var(--text-main);
+  color: #FFFFFF;
+  border-color: var(--text-main);
+}
+
+/* STICKY BOTTOM CONFIRMATION SHEET */
+.mobile-bottom-dock {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(110%);
+  width: 100%;
+  max-width: 480px;
+  z-index: 200;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--border-light);
+  box-shadow: var(--shadow-dock);
+  padding: 16px 20px calc(16px + env(safe-area-inset-bottom, 0px)) 20px;
+  transition: transform 0.4s var(--ease-editorial);
+}
+
+.mobile-bottom-dock.dock-open {
+  transform: translateX(-50%) translateY(0);
+}
+
+.dock-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dock-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.dock-meta-tag {
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--brass);
+  font-weight: 700;
+}
+
+.dock-selected-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-top: 2px;
+}
+
+.btn-dock-close {
+  background: transparent;
+  border: none;
+  font-size: 0.75rem;
+  color: var(--text-subtle);
+  cursor: pointer;
+  padding: 4px;
+}
+
+.btn-whatsapp-touch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #1C1917;
+  color: #FFFFFF;
+  padding: 16px 20px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(28, 25, 23, 0.15);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn-whatsapp-touch:active {
+  transform: scale(0.98);
+  background: #2D2926;
+}
+
+/* FOOTER */
+.mobile-footer {
+  padding: 24px 20px;
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--text-subtle);
+  border-top: 1px solid var(--border-light);
+  line-height: 1.6;
+}
