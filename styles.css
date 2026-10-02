@@ -417,8 +417,7 @@ body {
   width: 100%;
   max-width: 100%;
   border: none;
-  height: 175px;
-  touch-action: pan-y;
+  height: 450px;
 }
 
 
