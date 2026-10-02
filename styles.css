@@ -258,6 +258,9 @@ body {
   display: flex;
   flex-direction: column;
   gap: 36px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 /* NARRATIVE LETTER / DEDICATION */
@@ -267,6 +270,18 @@ body {
   border-radius: 0;
   padding: 8px 4px;
   box-shadow: none;
+}
+
+/* PLAYLIST SECTION (FREE-FLOATING / NO CARD) */
+.playlist-block {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 8px 0;
+  box-shadow: none;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 /* HW-PATH-TEXT STYLING (Inspired by HyperFrames hw-path-text) */
@@ -323,14 +338,6 @@ body {
   margin-top: 10px;
 }
 
-/* PLAYLIST SECTION (FREE-FLOATING / NO CARD) */
-.playlist-block {
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  padding: 8px 4px;
-  box-shadow: none;
-}
 
 /* HW-TITLE HANDWRITING STYLING (Inspired by HyperFrames hw-title) */
 .hw-title-wrapper {
@@ -399,12 +406,19 @@ body {
   box-shadow: none;
   background: transparent;
   position: relative;
+  width: 100%;
+  max-width: 100%;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
 }
 
 .music-embed-container iframe {
   display: block;
   width: 100%;
+  max-width: 100%;
   border: none;
+  height: 450px;
+  touch-action: pan-y;
 }
 
 
